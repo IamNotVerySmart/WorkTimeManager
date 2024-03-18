@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorkTimeManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        SizeToContent="WidthAndHeight"
+        Title="WorkTimeManager">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Label Name="TikTakAleNieTenDoJedzenia" Content="d/M/yyy HH:mm:ss" FontSize="38" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Label Content="Praca" HorizontalContentAlignment="Center" FontSize="16"/>
+            <Button Click="WorkStart" Content="Rozpocznij" FontSize="16"/>
+            <Button Click="WorkEnd" Content="Zakończ" FontSize="16"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label Content="Przerwa" HorizontalContentAlignment="Center" FontSize="16"/>
+            <Button Click="BreakStart" Content="Rozpocznij" FontSize="16"/>
+            <Button Click="BreakEnd" Content="Zakończ" FontSize="16"/>
+        </StackPanel>
     </Grid>
 </Window>
