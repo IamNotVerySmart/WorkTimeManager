@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorkTimeManager"
         mc:Ignorable="d"
+        FontSize="16"
         SizeToContent="WidthAndHeight"
         Title="WorkTimeManager">
     <Grid Margin="10">
@@ -16,19 +17,32 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
             <Label Name="TikTakAleNieTenDoJedzenia" Content="d/M/yyy HH:mm:ss" FontSize="38" />
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="0">
-            <Label Content="Praca" HorizontalContentAlignment="Center" FontSize="16"/>
-            <Button Click="WorkStart" Content="Rozpocznij" FontSize="16"/>
-            <Button Click="WorkEnd" Content="Zakończ" FontSize="16"/>
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="4">
+            <Label Content="Praca" HorizontalContentAlignment="Center"/>
+            <Button Name="wStart" Click="WorkStart" Content="Rozpocznij"/>
+            <Button Name="wEnd" Click="WorkEnd" Content="Zakończ" IsEnabled="False"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <Label Content="Przerwa" HorizontalContentAlignment="Center" FontSize="16"/>
-            <Button Click="BreakStart" Content="Rozpocznij" FontSize="16"/>
-            <Button Click="BreakEnd" Content="Zakończ" FontSize="16"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="4">
+            <Label Content="Przerwa" HorizontalContentAlignment="Center"/>
+            <Button Name="bStart" Click="BreakStart" Content="Rozpocznij" IsEnabled="False"/>
+            <Button Name="bEnd" Click="BreakEnd" Content="Zakończ" IsEnabled="False"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Margin="5">
+            <Label Content="Opis"/>
+            <TextBox Name="WorkDescription" MaxWidth="155" MaxHeight="400" TextWrapping="Wrap"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Margin="5">
+            <Label Content="Opis"/>
+            <TextBox Name="BreakDescription" MaxWidth="155" MaxHeight="400" TextWrapping="Wrap"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Margin="10">
+            <Button Content="Generuj Raport" Click="RaportGenerate"/>
         </StackPanel>
     </Grid>
 </Window>
